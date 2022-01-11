@@ -10,13 +10,13 @@ const int MAX_STACK_SIZE = 10;
 class Stack{
 private:
     int top;
-    int data[MAX_STACK_SIZE];
+    int* data = new int[MAX_STACK_SIZE];
 
 public:
     Stack();
     ~Stack();
     void push(int x);
-    int pop();
+    void pop();
     int peek();
     bool isFull();
     bool isEmpty();
