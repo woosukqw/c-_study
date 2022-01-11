@@ -12,32 +12,19 @@ Stack::~Stack(){
 }
 
 void Stack::push(int x){
-    if (isFull()){
-        error("stack full error");
-    }
-    top += 1;
-    data[top] = x;
+    // TODO
 }
 
 void Stack::pop(){
-    if (isEmpty()){
-        error("stack empty error");
-    }
-    top -= 1;
+    // TODO
 }
 
 bool Stack::isFull() {
-    if (top == MAX_STACK_SIZE)
-        return true;
-    else
-        return false;
+    // TODO
 }
 
 bool Stack::isEmpty() {
-    if (top == -1)
-        return true;
-    else
-        return false;
+    // TODO
 }
 
 bool check_brace(char str[]){
