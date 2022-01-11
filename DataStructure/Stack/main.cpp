@@ -9,7 +9,8 @@ Stack::Stack() {
     top = -1;
 }
 Stack::~Stack(){
-    data[MAX_STACK_SIZE] = NULL;
+    delete [] data;
+    //data[MAX_STACK_SIZE] = NULL;
 }
 
 void Stack::push(int x){
@@ -18,16 +19,15 @@ void Stack::push(int x){
     }
     top += 1;
     data[top] = x;
+    std::cout << "* pushed "<< x << " into stack" << std::endl;
 }
 
-int Stack::pop(){
+void Stack::pop(){
     if (isEmpty()){
         error("stack empty error");
     }
-
-    int popped = data[top];
+    std::cout << "* popped "<< Stack::peek() << " from stack" << std::endl;
     top -= 1;
-    return popped;
 }
 
 int Stack::peek(){
@@ -58,7 +58,7 @@ int Stack::size(){
 
 void Stack::display() {
     for (int i=0; i<=top; i++){
-        std::cout << i << ": " << data[i] << std::endl;
+        std::cout << i << "th value: " << data[i] << std::endl;
     }
 }
 
@@ -66,5 +66,8 @@ int main(){
     Stack stack;
     stack.push(5);
     stack.push(3);
+    stack.pop();
+    std::cout << "peek of Stack: " << stack.peek() << std::endl;
+    std::cout << "size of Stack: " << stack.size() << std::endl;
     stack.display();
 }
