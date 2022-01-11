@@ -5,7 +5,7 @@ inline void error(const char *str){
     exit(1);
 }
 
-const int MAX_STACK_SIZE = 10;
+const int MAX_STACK_SIZE = 50;
 
 class Stack{
 private:
